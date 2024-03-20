@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>Letakan Kursor ke masing-masing kotak untuk melihat gambar </h2>
+    <p>Agar gambar bisa bersuara seperti apa yang ditampilkan maka harus klik bagian manapun pada tampilan karena hal itu adalah suatu kebiajakan browser untuk keamanan. 
+        Setelah diklik maka jika kursos diarahkan pada bagian gambar, sound akan berbunyi.</p>
+    <div id="div1">
+        Buaya
+    </div>
+    <div id="div2">
+        Kucing
+    </div>
+    <div id="div3">
+        Ayam
+    </div>
+    <audio id="soundbuaya" src="sound/suara buaya.ogg"></audio>
+    <audio id="soundkucing" src="sound/suarakucing.mp3"></audio>
+    <audio id="soundayam" src="sound/3-Ayam-Berkokok.mp3"></audio>
+    <script src="jss/jquery-3.7.1.min.js"></script>
+    <script>
+        $("document").ready(function(){
+            $("#div1").mouseenter(function(){
+                $(this).css({
+                    background: "url('https://akcdn.detik.net.id/visual/2023/05/29/taman-khusus-buaya-di-dubai_169.jpeg?w=650')"
+                });
+                document.getElementById('soundbuaya').play();
+            }).mouseleave(function(){
+                $(this).css({
+                    background: "greenyellow"
+                });
+                document.getElementById('soundbuaya').pause();
+            });
+
+            $("#div2").mouseenter(function(){
+                $(this).css({
+                    background: "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxkvPrWfzYOwZiQTeo2-EDxJxwW8-yQwBi8iwnJZ3y3Q&s')"
+                });
+                document.getElementById('soundkucing').play();
+            }).mouseleave(function(){
+                $(this).css({
+                    background: "greenyellow"
+                });
+                document.getElementById('soundkucing').pause();
+            });
+
+            $("#div3").mouseenter(function(){
+                $(this).css({
+                    background: "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuvk_5bsUlwg59bXeY5Pw91AFMiHtfp4TMmA&usqp=CAU')"
+                });
+                document.getElementById('soundayam').play();
+            }).mouseleave(function(){
+                $(this).css({
+                    background: "greenyellow"
+                });
+                document.getElementById('soundayam').pause();
+            });
+        });
+    </script>
+</body>
+</html>
